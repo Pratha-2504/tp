@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Go Out With Me?</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #FDD2E1, #AED9E0); /* Light Pink to Light Blue gradient */
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #main-container {
+            text-align: center;
+        }
+
+        #question {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        #panda-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        #buttons-container {
+            margin-top: 20px;
+        }
+
+        .button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        #yes-button {
+            background-color: #FF69B4; /* Light Pink */
+        }
+
+        #no-button {
+            background-color: #87CEEB; /* Light Blue */
+        }
+
+        #result-container {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #happy-panda {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-container">
+        <div id="question">Will you go out with me?</div>
+        <img id="panda-image" src="Free Vector _ Cute panda playing guitar cartoon vector icon illustration_ animal music icon concept isolated flat.jpeg" alt="Cute Panda">
+        <div id="buttons-container">
+            <button id="yes-button" class="button" onclick="showResult('Yayy! Panda is happy')">Yes</button>
+            <button id="no-button" class="button" onmouseover="moveNoButton()" onmouseout="stopMovingNoButton()">No</button>
+        </div>
+        <div id="result-container">
+            <p id="result-text"></p>
+            <img id="happy-panda" src="Free Vector _ Cute panda with love sign hand cartoon vector icon illustration_ animal nature icon concept isolated.jpeg" alt="Happy Panda">
+        </div>
+    </div>
+
+    <script>
+        function showResult(message) {
+            document.getElementById('result-text').innerText = message;
+            document.getElementById('result-container').style.display = 'block';
+            document.getElementById('buttons-container').style.display = 'none';
+        }
+
+        function moveNoButton() {
+            var button = document.getElementById('no-button');
+            var x = Math.random() * window.innerWidth;
+            var y = Math.random() * window.innerHeight;
+            button.style.position = 'absolute';
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+        }
+
+        function stopMovingNoButton() {
+            var button = document.getElementById('no-button');
+            button.style.position = 'static';
+        }
+    </script>
+</body>
+</html>
